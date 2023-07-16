@@ -3,11 +3,12 @@ base: core22
 version: '0.2.0'
 license: Apache-2.0
 summary: xrosswall = caddy + v2ray
-architectures:
-  - amd64
-  - arm64
 description: |
   A simple solution, combining caddy and v2ray, for anti-censorship. 
+
+architectures:
+  - build-on: amd64
+  - build-on: arm64
 
 grade: stable
 confinement: strict
