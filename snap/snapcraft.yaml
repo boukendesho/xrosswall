@@ -1,6 +1,6 @@
 name: xrosswall
 base: core22 
-version: '0.1.0'
+version: '0.2.0'
 license: Apache-2.0
 summary: xrosswall = caddy + v2ray
 architectures:
@@ -49,8 +49,21 @@ parts:
     build-snaps:
       - go
     source-type: git
-    source: https://github.com/boukendesho/xrosswall
-    source-subdir: caddy
+    source: https://github.com/caddyserver/xcaddy
+    override-build: |
+      snapcraftctl build
+      $SNAPCRAFT_PART_INSTALL/bin/xcaddy build \
+        --with github.com/caddy-dns/cloudflare \
+        --with github.com/caddy-dns/azure \
+        --with github.com/caddy-dns/linode \
+        --with github.com/caddy-dns/namecheap \
+        --with github.com/caddy-dns/route53 \
+        --with github.com/caddy-dns/duckdns \
+        --with github.com/caddy-dns/vultr \
+        --with github.com/caddy-dns/godaddy \
+        --output $SNAPCRAFT_PART_INSTALL/bin/caddy
+    stage:
+      - -bin/xcaddy
     
   v2ray:
     plugin: nil
@@ -61,5 +74,4 @@ parts:
     override-build: |
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin
       export CGO_ENABLED=0
-      cd $CRAFT_PART_SRC && go build -o $SNAPCRAFT_PART_INSTALL/bin/v2ray -trimpath -ldflags "-s -w -buildid=" ./main
-
+      cd $SNAPCRAFT_PART_SRC && go build -o $SNAPCRAFT_PART_INSTALL/bin/v2ray -trimpath -ldflags "-s -w -buildid=" ./main
