@@ -2,15 +2,63 @@
 
 A simple solution, combining [caddy](https://github.com/caddyserver/caddy) and [v2ray](https://github.com/v2fly/v2ray-core/), for anti-censorship.
 
+
+[![xrosswall](https://snapcraft.io/xrosswall/badge.svg)](https://snapcraft.io/xrosswall)
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/xrosswall)
+
+
 ## Requirements
 
 - [Snap installed](https://snapcraft.io/docs/installing-snapd)
+
+## Benefits of using "Snap"
+- Easy to use
+- Always up to date
+- Low maintenance
+
+Thanks to snap's automatic update feature, users consistently have access to the latest caddy & v2ray version without the need for frequent manual updates from the server.This ensuring users have access to the latest features and bug fixes.
 
 ## Install
 
 ```bash
 $ sudo snap install xrosswall
 ```
+
+## Start to use
+
+```bash
+$ sudo xrosswall init
+```
+
+## Help
+
+```bash
+$ xrosswall --help
+```
+
+## How to manage Service ?
+When you have made changes to the configuration file, you need to manually restart the service.
+```bash
+# show service status
+$ sudo snap services xrosswall
+
+# start/stop/restart all services
+$ sudo snap start/stop/restart xrosswall
+
+# or manipulate single service
+$ sudo snap start/stop/restart xrosswall.caddy
+```
+
+## How to check Service logs ?
+```bash
+$ sudo snap logs xorsswall.caddy
+```
+
+## config file location
+- `$SNAP_DATA`->`/var/snap/xrosswall/current`
+  - Caddyfile
+  - config.json
 
 ## Caddy modules
 - All Standard modules

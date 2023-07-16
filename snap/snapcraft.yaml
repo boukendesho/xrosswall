@@ -1,0 +1,62 @@
+name: xrosswall
+base: core22 
+version: '0.1.0'
+license: Apache-2.0
+summary: xrosswall = caddy + v2ray
+description: |
+  A simple solution, combining caddy and v2ray, for anti-censorship. 
+
+grade: stable
+confinement: strict
+
+apps:
+  xrosswall:
+    command: bin/run-helper
+
+  caddy:
+    command: bin/caddy run --config $SNAP_DATA/Caddyfile
+    reload-command: bin/caddy reload --config $SNAP_DATA/Caddyfile
+    stop-command: bin/caddy stop
+    restart-condition: always
+    daemon: simple
+    plugs:
+      - network
+      - network-bind
+    
+  v2ray:
+    command: bin/v2ray run --config $SNAP_DATA/config.json
+    restart-condition: on-failure
+    daemon: simple
+    plugs:
+      - network
+      - network-bind
+parts:
+  misc:
+    plugin: dump
+    source: conf/
+    organize:
+      Caddyfile.tpl: conf/
+      config.json.tpl: conf/
+      run-helper : bin/run-helper
+    stage-packages:
+      - gettext
+
+  caddy:
+    plugin: go
+    build-snaps:
+      - go
+    source-type: git
+    source: https://github.com/boukendesho/xrosswall
+    source-subdir: caddy
+    
+  v2ray:
+    plugin: nil
+    build-snaps:
+      - go
+    source-type: git
+    source: https://github.com/v2fly/v2ray-core
+    override-build: |
+      mkdir -p $SNAPCRAFT_PART_INSTALL/bin
+      export CGO_ENABLED=0
+      cd $CRAFT_PART_SRC && go build -o $SNAPCRAFT_PART_INSTALL/bin/v2ray -trimpath -ldflags "-s -w -buildid=" ./main
+
