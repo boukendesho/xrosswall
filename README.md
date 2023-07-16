@@ -20,6 +20,30 @@ A simple solution, combining [caddy](https://github.com/caddyserver/caddy) and [
 
 Thanks to snap's automatic update feature, users consistently have access to the latest caddy & v2ray version without the need for frequent manual updates from the server.This ensuring users have access to the latest features and bug fixes.
 
+## Stack diagram
+The default stack is tls + vmess + ws，you can change it on your own. See `config file location` below.
+```text
+    +----------------------+
+    |        Client        |
+    +----------------------+
+              |
+              | HTTPS
+              |
+    +----------------------+
+    |        Caddy         |
+    |   (Reverse Proxy)    |
+    +----------------------+
+              |
+              | Vmess/WebSocket
+              |
+    +----------------------+
+    |        V2Ray         |
+    |   (Proxy Server)     |
+    +----------------------+
+              |
+              | Internet
+```
+
 ## Install
 
 ```bash
