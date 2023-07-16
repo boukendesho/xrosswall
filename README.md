@@ -1,9 +1,8 @@
 ## xrosswall
+[![xrosswall](https://snapcraft.io/xrosswall/badge.svg)](https://snapcraft.io/xrosswall)
 
 A simple solution, combining [caddy](https://github.com/caddyserver/caddy) and [v2ray](https://github.com/v2fly/v2ray-core/), for anti-censorship.
 
-
-[![xrosswall](https://snapcraft.io/xrosswall/badge.svg)](https://snapcraft.io/xrosswall)
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/xrosswall)
 
