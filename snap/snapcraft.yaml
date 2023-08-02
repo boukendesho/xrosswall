@@ -72,7 +72,7 @@ parts:
       - go
     source-type: git
     source: https://github.com/v2fly/v2ray-core
-    source-tag: '5.7.0'
+    source-tag: 'v5.7.0'
     override-build: |
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin
       export CGO_ENABLED=0
