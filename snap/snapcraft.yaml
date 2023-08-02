@@ -51,7 +51,6 @@ parts:
       - go
     source-type: git
     source: https://github.com/caddyserver/xcaddy
-    source-tag: '2.6.4'
     override-build: |
       snapcraftctl build
       $SNAPCRAFT_PART_INSTALL/bin/xcaddy build \
