@@ -1,6 +1,6 @@
 name: xrosswall
 base: core22 
-version: '0.2.0'
+version: '0.3.0'
 license: Apache-2.0
 summary: xrosswall = caddy + v2ray
 description: |
@@ -51,6 +51,7 @@ parts:
       - go
     source-type: git
     source: https://github.com/caddyserver/xcaddy
+    source-tag: '2.6.4'
     override-build: |
       snapcraftctl build
       $SNAPCRAFT_PART_INSTALL/bin/xcaddy build \
@@ -72,6 +73,7 @@ parts:
       - go
     source-type: git
     source: https://github.com/v2fly/v2ray-core
+    source-tag: '5.7.0'
     override-build: |
       mkdir -p $SNAPCRAFT_PART_INSTALL/bin
       export CGO_ENABLED=0
