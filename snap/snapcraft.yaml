@@ -67,7 +67,7 @@ parts:
       - -bin/xcaddy
     
   v2ray:
-    plugin: nil
+    plugin: go
     build-snaps:
       - go
     source-type: git
