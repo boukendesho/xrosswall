@@ -10,8 +10,8 @@ A simple solution, combining [caddy](https://github.com/caddyserver/caddy) and [
 ## Requirements
 
 - [Snap installed](https://snapcraft.io/docs/installing-snapd)
-- A server or vps with 80 and 443 port open
-- A public domain name with correct A or AAAA record resolution
+- A server or vps with 80 and 443 port open (only 443 port required if use DNS Challenge)
+- A public domain name with correct A or AAAA record
 
 ## Benefits of using "Snap"
 - Easy to use
