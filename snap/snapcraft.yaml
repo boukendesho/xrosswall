@@ -54,8 +54,8 @@ parts:
     source-tag: 'v0.3.4'
     source-depth: 1
     override-build: |
-      snapcraftctl build
-      $SNAPCRAFT_PART_INSTALL/bin/xcaddy build \
+      craftctl default
+      $CRAFT_PART_INSTALL/bin/xcaddy build \
         --with github.com/caddy-dns/cloudflare \
         --with github.com/caddy-dns/azure \
         --with github.com/caddy-dns/linode \
@@ -64,7 +64,7 @@ parts:
         --with github.com/caddy-dns/duckdns \
         --with github.com/caddy-dns/vultr \
         --with github.com/caddy-dns/godaddy \
-        --output $SNAPCRAFT_PART_INSTALL/bin/caddy
+        --output $CRAFT_PART_INSTALL/bin/caddy
     stage:
       - -bin/xcaddy
     
@@ -80,6 +80,6 @@ parts:
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0 | tr -d 'v')
     override-build: |
-      mkdir -p $SNAPCRAFT_PART_INSTALL/bin
+      mkdir -p $CRAFT_PART_INSTALL/bin
       export CGO_ENABLED=0
-      cd $SNAPCRAFT_PART_SRC && go build -o $SNAPCRAFT_PART_INSTALL/bin/v2ray -trimpath -ldflags "-s -w -buildid=" ./main
+      cd $CRAFT_PART_SRC && go build -o $CRAFT_PART_INSTALL/bin/v2ray -trimpath -ldflags "-s -w -buildid=" ./main
