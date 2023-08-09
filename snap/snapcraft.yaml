@@ -26,7 +26,7 @@ apps:
     plugs:
       - network
       - network-bind
-    
+
   v2ray:
     command: bin/v2ray run --config $SNAP_DATA/config.json
     restart-condition: on-failure
@@ -51,7 +51,7 @@ parts:
       - go
     source-type: git
     source: https://github.com/caddyserver/xcaddy
-    source-tag: 'v0.3.4'
+    source-tag: 'v0.3.5'
     source-depth: 1
     override-build: |
       craftctl default
@@ -67,7 +67,7 @@ parts:
         --output $CRAFT_PART_INSTALL/bin/caddy
     stage:
       - -bin/xcaddy
-    
+
   v2ray:
     plugin: go
     build-snaps:
