@@ -2,12 +2,15 @@
 	admin off
 
 	log default {
+                output stdout
 		format console
 	}
 }
 
 ${SERVER_DOMAIN} {
 	encode gzip
+
+	log
 
 	tls ${TLS_CONTENTS}
 
