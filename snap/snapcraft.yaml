@@ -1,14 +1,14 @@
 name: xrosswall
-base: core22 
+base: core24
 adopt-info: v2ray
 license: Apache-2.0
 summary: xrosswall = caddy + v2ray
 description: |
   A simple solution, combining caddy and v2ray, for anti-censorship. 
 
-architectures:
-  - build-on: amd64
-  - build-on: arm64
+platforms:
+  amd64:
+  arm64:
 
 grade: stable
 confinement: strict
