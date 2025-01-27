@@ -74,7 +74,7 @@ parts:
       - go
     source-type: git
     source: https://github.com/v2fly/v2ray-core
-    source-tag: 'v5.25.1'
+    source-tag: 'v5.26.0'
     source-depth: 1
     override-pull: |
       craftctl default
