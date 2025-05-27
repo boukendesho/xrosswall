@@ -64,6 +64,7 @@ parts:
         --with github.com/caddy-dns/duckdns \
         --with github.com/caddy-dns/vultr \
         --with github.com/caddy-dns/godaddy \
+        v2.9.1 \ #downgrade caddy to v2.9.1 because various dns plugin build error
         --output $CRAFT_PART_INSTALL/bin/caddy
     stage:
       - -bin/xcaddy
