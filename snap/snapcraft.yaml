@@ -51,7 +51,7 @@ parts:
       - go
     source-type: git
     source: https://github.com/caddyserver/xcaddy
-    source-tag: 'v0.4.4'
+    source-tag: 'v0.4.5'
     source-depth: 1
     override-build: |
       craftctl default
