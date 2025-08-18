@@ -2,10 +2,10 @@
 Because upstream caddy changed dns api which cause multiple dns plguins can't build with the latest caddy anymore.
 For backward compatibility reasons, I have decided to temporarily stop updating this project.
 Until all DNS plugins are adapted to the latest caddy.
+
 Tracker:
-- https://github.com/caddy-dns/godaddy/issues/9
+- https://github.com/caddy-dns/linode/issues/8
 - https://github.com/caddy-dns/namecheap/issues/14
-- https://github.com/caddy-dns/vultr/issues/8
 - https://github.com/caddy-dns/route53/issues/59
 
 ## xrosswall
