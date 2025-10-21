@@ -60,6 +60,7 @@ parts:
         --with github.com/caddy-dns/azure \
         --with github.com/caddy-dns/linode \
         --with github.com/caddy-dns/namecheap@master \
+        --with github.com/caddy-dns/route53 \
         --with github.com/caddy-dns/duckdns \
         --with github.com/caddy-dns/vultr \
         --with github.com/caddy-dns/godaddy \

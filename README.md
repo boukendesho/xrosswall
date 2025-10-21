@@ -1,9 +1,3 @@
-## Project Resumed
-Only one DNS plugins is still broken and no any progress.
-
-Tracker:
-- https://github.com/caddy-dns/route53/issues/59
-
 ## xrosswall
 [![xrosswall](https://snapcraft.io/xrosswall/badge.svg)](https://snapcraft.io/xrosswall)
 
